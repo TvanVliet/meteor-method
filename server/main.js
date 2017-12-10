@@ -5,6 +5,7 @@ Meteor.startup(() => {
   // code to run on server at startup
 });
 
+// Defining the meteor method
 Meteor.methods({
     'saveDocument': function(text, number){
 
@@ -12,7 +13,6 @@ Meteor.methods({
     Documents.insert({
     	clientname: text,
     	clientage: number}, 
-    	function(error, result) {
-	});
+    	);
     }
 });

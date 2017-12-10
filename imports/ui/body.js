@@ -4,7 +4,6 @@ import { Documents } from '../../collections/documents.js';
 import './body.html';
 import '../../collections/documents.js'
 
-
 Template.body.events({
   'submit #form1'(event) {
     // Prevent default browser form submit
@@ -14,12 +13,12 @@ Template.body.events({
     const target = event.target;
     const text = target.text.value;
     const number = target.number.value;
- 
+
+    // call the Meteor Method in server/main.js
     Meteor.call('saveDocument', text, number);
  
     // Clear form
     target.text.value = '';
     target.number.value = '';
-
   },
 });
